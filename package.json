@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@fastify/autoload": "^6.1.0",
+    "@fastify/swagger": "^9.4.2",
+    "@fastify/swagger-ui": "^5.2.2",
     "axios": "^1.8.2",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.40.0",
@@ -32,6 +34,7 @@
     "drizzle-kit": "^0.30.5",
     "migrate": "^2.1.0",
     "nodemon": "^3.1.9",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.8",
+    "nock": "^13.1.1"
   }
 }
