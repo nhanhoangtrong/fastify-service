@@ -12,7 +12,7 @@
     "drizzle:gen": "drizzle-kit generate",
     "dev": "nodemon main.js --watch lib",
     "start": "NODE_ENV=production node main.js",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch"
   },
   "dependencies": {
