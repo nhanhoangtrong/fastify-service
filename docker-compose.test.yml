@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17.0-alpine
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    networks:
+      - test-network
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_URL: postgres://test:test@postgres:5432/test
+    depends_on:
+      - postgres
+    networks:
+      - test-network
+networks:
+  test-network:
+    driver: bridge

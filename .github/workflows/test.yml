@@ -1,0 +1,18 @@
+name: Fastify Service CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run tests for Fastify with PostgreSQL
+        run: docker compose -f docker-compose.test.yml up --build --exit-code-from app
+
