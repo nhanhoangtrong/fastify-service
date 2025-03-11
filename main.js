@@ -5,6 +5,8 @@ import registerJobs from './lib/jobs/main.js';
 const start = async () => {
   try {
     const fastify = await createFastify();
+    // Wait for readiness
+    await fastify.ready();
     await fastify.listen({
       port: Number.parseInt(Config.PORT) || 3000,
     });
