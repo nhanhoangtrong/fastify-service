@@ -1,6 +1,6 @@
+import { config } from 'dotenv';
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
 import createConnector from '../lib/plugins/drizzle/connector.js';
-import { config } from 'dotenv';
 import * as schema from '../lib/schemas/main.js';
 
 config();
