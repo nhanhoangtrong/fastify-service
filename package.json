@@ -12,6 +12,8 @@
     "drizzle:gen": "drizzle-kit generate",
     "dev": "nodemon main.js --watch lib",
     "start": "NODE_ENV=production node main.js",
+    "format": "biome format --write",
+    "lint": "biome lint",
     "test": "vitest run",
     "test:watch": "vitest --watch"
   },
@@ -31,10 +33,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitlint": "^19.8.0",
     "drizzle-kit": "^0.30.5",
+    "husky": "^9.1.7",
     "migrate": "^2.1.0",
+    "nock": "^13.1.1",
     "nodemon": "^3.1.9",
-    "vitest": "^3.0.8",
-    "nock": "^13.1.1"
+    "vitest": "^3.0.8"
   }
 }
