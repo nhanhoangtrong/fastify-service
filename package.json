@@ -15,7 +15,8 @@
     "format": "biome format --write",
     "lint": "biome lint",
     "test": "vitest run",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "prepare": "is-ci || husky"
   },
   "dependencies": {
     "@fastify/autoload": "^6.1.0",
@@ -37,6 +38,7 @@
     "commitlint": "^19.8.0",
     "drizzle-kit": "^0.30.5",
     "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
     "migrate": "^2.1.0",
     "nock": "^13.1.1",
     "nodemon": "^3.1.9",
