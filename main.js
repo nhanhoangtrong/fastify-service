@@ -8,7 +8,7 @@ const start = async () => {
     // Wait for readiness
     await fastify.ready();
     await fastify.listen({
-      port: Number.parseInt(Config.PORT) || 3000,
+      port: Number.parseInt(Config.port) || 3000,
     });
     // Register job after
     registerJobs(fastify);

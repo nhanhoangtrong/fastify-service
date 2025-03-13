@@ -1,9 +1,6 @@
-declare namespace root {
-  type DrizzleDb = ReturnType<typeof import('./lib/plugins/drizzle/connector').default>;
-  type FastifyInstance = import('fastify').FastifyInstance & {
-    db: DrizzleDb;
-  };
-}
+import type { DecodePayloadType } from '@fastify/jwt';
+
+type DrizzleDb = ReturnType<typeof import('drizzle-orm/node-postgres').drizzle>;
 
 declare namespace telegram {
   type Entity = {
@@ -29,7 +26,14 @@ declare namespace telegram {
   };
 }
 
-type HandlerResponse = {
-  text: string;
-  success: boolean;
-};
+declare module 'fastify' {
+  interface FastifyInstance {
+    db: DrizzleDb;
+    authorized: () => void;
+    authenticate: () => void;
+  }
+
+  interface FastifyRequest {
+    decoded: DecodePayloadType;
+  }
+}

@@ -10,6 +10,6 @@ COPY . /usr/src/app
 RUN cp -a /tmp/app/node_modules /usr/src/app
 
 WORKDIR /usr/src/app
-RUN if [ ! -f .env ]; then cp .env.test .env; fi
+RUN cp .env.test .env
 
-CMD ["pnpm", "test"]
+CMD ["pnpm", "ci:test"]

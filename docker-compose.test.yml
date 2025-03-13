@@ -12,7 +12,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ci.Dockerfile
     environment:
       DB_URL: postgres://test:test@postgres:5432/test
     depends_on:

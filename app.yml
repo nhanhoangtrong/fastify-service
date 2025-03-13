@@ -1,6 +1,6 @@
 apps:
   - script: ./main.js
-    version: 0.0.2
+    version: 0.1.0
     name: 'fastify-service'
     env_production:
       NODE_ENV: production
